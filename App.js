@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
-import Header from "./components/header";
+import Header from "./components/Header";
+import StartGameScreen from "./screens/startGame";
 
 const styles = StyleSheet.create({
   container: {
