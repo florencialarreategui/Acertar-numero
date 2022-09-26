@@ -1,5 +1,6 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
+import { colors } from "../constants/colors";
 const styles = StyleSheet.create({
     container:{
         shadowColor: "#9DD9D2",
@@ -10,7 +11,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.50,
         shadowRadius: 12.35,
         elevation: 19,
-        backgroundColor:"#F4D06F",
+        backgroundColor:colors.celeste,
         borderRadius: 5,
     }
 })
