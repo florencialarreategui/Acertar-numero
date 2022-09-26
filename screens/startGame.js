@@ -8,7 +8,6 @@ const styles = StyleSheet.create({
         flex:1,
         aligmItems: "center",
         marginVertical: 10,
-
     },
     title:{
        fontSize:20,
@@ -35,7 +34,6 @@ const styles = StyleSheet.create({
         fontSize: 25,
         paddingVertical: 10,
         textAlign: "center",
-        
     },
     buttonContainer:{
         with:"75%",
@@ -106,7 +104,7 @@ const StartGameScreen = () =>{
                     />
                 </View>
                 </Card>
-                {/* {confirmedOutput} */}
+               {confirmedOutput} 
             </View>
         </View>
        </TouchableWithoutFeedback>
