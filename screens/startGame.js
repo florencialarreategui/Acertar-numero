@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 import { View, Text, StyleSheet, Button, TouchableWithoutFeedback, Keyboard } from "react-native";
-import Input from "../components/input";
-import  Card  from "../components/card"
+import Input from "../components/Input";
+import  Card  from "../components/Card"
 import { colors } from "../constants/colors";
 const styles = StyleSheet.create({
     container:{
@@ -106,7 +106,7 @@ const StartGameScreen = () =>{
                     />
                 </View>
                 </Card>
-                {confirmedOutput}
+                {/* {confirmedOutput} */}
             </View>
         </View>
        </TouchableWithoutFeedback>
