@@ -1,30 +1,31 @@
 import React, { useState} from "react";
 import { View, Text, StyleSheet, Button, TouchableWithoutFeedback, Keyboard } from "react-native";
-import Input from "../components/Input";
-import  Card  from "../components/Card"
+import Input from "../components/input";
+import  Card  from "../components/card"
 import { colors } from "../constants/colors";
 const styles = StyleSheet.create({
     container:{
         flex:1,
         aligmItems: "center",
-        marginVertical: 10,
+        marginVertical: 15,
     },
     title:{
        fontSize:20,
         color: "#FFF8F0",
-        textAling:"center ",
+        textAling:"center",
         paddingVertical: 20,
     },
     label: {
         fontSize:14,
         color: "#392F5A",
-        textAling:"center ",
+        textAling:"center",
         paddingVertical: 5,
     },
     inputContainer: {
         justifyContent:"center",
         alignItems:"center",
-        marginHorizontal: 20,
+        marginHorizontal: 5,
+        padding:5,
     },
     input:{
         width:"100%",
@@ -39,8 +40,24 @@ const styles = StyleSheet.create({
         with:"75%",
         marginHorizontal: 20,
         flexDirection: "row",
-        justifyContent:" space-around",
+        justifyContent:"space-around",
+        // marginTop: 20,
+        // marginBottom:20,
+        margin:30,
+        padding:10
+    },
+    summaryContainer: {
+        width: '80%',
+        height: 180,
+        marginHorizontal: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: 10,
         marginTop: 20,
+    },
+    summaryText: {
+        fontSize: 18,
+        fontFamily: 'Lato-Regular',
     }
 
 
@@ -55,11 +72,13 @@ const StartGameScreen = () =>{
     }
     const onReset = () =>{
        setNumber("");
+       setSelectedNumber(0);
+       setConfirmed(false);
        Keyboard.dismiss(); 
     }
     const onConfirm = () =>{
         const chosenNumber = parseInt (number, 10);
-        if(isNaN(chosenNumber)|| chosenNumber <=  0 || chosenNumber > 99);
+        if(isNaN(chosenNumber)|| chosenNumber <=  0 || chosenNumber > 99)return;
         setConfirmed(true);
         setSelectedNumber(chosenNumber)
         setNumber("");
@@ -95,16 +114,17 @@ const StartGameScreen = () =>{
                     <Button
                     title="Limpiar"
                     onPress={(onReset)}
-                    color= {colors.amarillo}
+                    color= {colors.violeta}
                     />
                      <Button
                     title="Confirmar"
                     onPress={( (onConfirm) => null)}
-                    color= {colors.amarillo}
+                    color= {colors.violeta}
                     />
                 </View>
                 </Card>
-               {confirmedOutput} 
+               {confirmedOutput()}
+         
             </View>
         </View>
        </TouchableWithoutFeedback>
