@@ -1,3 +1,4 @@
+import React, {useState} from "react";
 import { StyleSheet, Text, View } from 'react-native';
 import Header from "./components/header";
 import StartGameScreen from "./screens/startGame";
