@@ -11,8 +11,8 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 20,
-        color: "#FF8811",
-        fontWeight: "bold"
+        color: colors.amarillo,
+        fontFamily: "Rubik-Bold",
     }
 })
 const Header = ({ title }) => {
