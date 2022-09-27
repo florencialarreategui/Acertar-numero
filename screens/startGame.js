@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     },
     summaryText: {
         fontSize: 18,
-        fontFamily: 'Lato-Regular',
+        fontFamily: 'Rubik-Regular',
     }
 
 
@@ -118,7 +118,7 @@ const StartGameScreen = () =>{
                     />
                      <Button
                     title="Confirmar"
-                    onPress={( (onConfirm) => null)}
+                    onPress={( (onConfirm) )}
                     color= {colors.violeta}
                     />
                 </View>

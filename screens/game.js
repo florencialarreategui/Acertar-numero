@@ -25,8 +25,16 @@ const GameScreen = ({selectedNumber}) =>{
             <Text style={styles.title}>La suposición del oponente</Text>
             <NumberContainer>{currentGuess}</NumberContainer>
             <View style={styles.buttonContainer}>
-                <Button tittle= "Menor" onPress={()=> null}/>
-                <Button tittle= "Menor" onPress={()=> null}/>
+                <Button
+                 tittle= "Menor" 
+                 onPress={()=> null}
+                 color= {colors.violeta}
+                 />
+                <Button
+                 tittle= "Menor" 
+                 onPress={()=> null}
+                 color= {colors.violeta}
+                 />
             </View>
             </Card>
         </View>
