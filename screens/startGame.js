@@ -1,8 +1,12 @@
 import React, { useState} from "react";
-import { View, Text, StyleSheet, Button, TouchableWithoutFeedback, Keyboard } from "react-native";
+import { View, Text, StyleSheet, Button, TouchableWithoutFeedback, Keyboard, ScrollView, Dimensions, KeyboardAvoidingView, Platform  } from "react-native";
 import Input from "../components/input";
-import  Card  from "../components/card"
+import  Card  from "../components/card";
+import NumberContainer from "../components/numberContainer";
 import { colors } from "../constants/colors";
+
+const { height, width } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
     container:{
         flex:1,
@@ -31,13 +35,13 @@ const styles = StyleSheet.create({
         width:"100%",
         borderBottomColor: "#392F5A",
         borderBottomWidth:1,
-        minWidth: 90,
+        maxWidth: 90,
         fontSize: 25,
         paddingVertical: 10,
         textAlign: "center",
     },
     buttonContainer:{
-        with:"75%",
+        with: width / 1.5,
         marginHorizontal: 20,
         flexDirection: "row",
         justifyContent:"space-around",
@@ -83,18 +87,23 @@ const StartGameScreen = () =>{
         setSelectedNumber(chosenNumber)
         setNumber("");
     }
+
+    // const onHandleStartGame = () => {
+    //     onStartGame(selectedNumber);
+    // }
     const confirmedOutput = () => confirmed && (
         <Card style= {styles.summaryContainer}>
             <Text style={styles.summaryText}> Tu elección</Text>
             <Text style={styles.summaryText}> {selectedNumber}</Text>
             <Button
             title="Iniciar Juego"
-            onPress={() => null}
+            onPress={()=> null}
             color= {colors.violeta} 
             />
         </Card>
     )
     return(
+        <KeyboardAvoidingView contentContainerStyle={styles.containerScroll} style={styles.containerScroll} behavior={Platform.OS === 'android' ? 'padding' : 'position'} keyboardVerticalOffset={30}>
         <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
         <View style={StyleSheet.container}>
             <Text style={styles.title}>Comenzar juego</Text>
@@ -128,6 +137,7 @@ const StartGameScreen = () =>{
             </View>
         </View>
        </TouchableWithoutFeedback>
+       </KeyboardAvoidingView>
     )
 }
 export default StartGameScreen;
