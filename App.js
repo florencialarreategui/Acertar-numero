@@ -1,5 +1,5 @@
 import React, { useState} from "react";
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
 import Header from "./components/header";
 import StartGameScreen from "./screens/startGame";
 import { useFonts } from "expo-font";
@@ -30,7 +30,7 @@ export default function App() {
   }
   if(!loaded) {
     return(
-      <View style ={style.conatinerLoader}>
+      <View style ={styles.conatinerLoader}>
         <ActivityIndicator size="large" color={colors.primary}/>
       </View>
     )
