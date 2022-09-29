@@ -88,16 +88,16 @@ const StartGameScreen = () =>{
         setNumber("");
     }
 
-    // const onHandleStartGame = () => {
-    //     onStartGame(selectedNumber);
-    // }
+    const onHandleStartGame = () => {
+        onStartGame(selectedNumber);
+    }
     const confirmedOutput = () => confirmed && (
         <Card style= {styles.summaryContainer}>
             <Text style={styles.summaryText}> Tu elección</Text>
             <Text style={styles.summaryText}> {selectedNumber}</Text>
             <Button
             title="Iniciar Juego"
-            onPress={()=> null}
+            onPress={onHandleStartGame}
             color= {colors.violeta} 
             />
         </Card>
